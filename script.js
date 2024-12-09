@@ -10,50 +10,32 @@ const volumeControl = document.getElementById('volumeControl');
 const hint_image = document.querySelector('.hint-image');
 const hint = document.getElementById("hint");
 const targets_main = document.querySelector(".targets");
+
 function FullScreen() {
     if (mainElement.requestFullscreen) {
-        mainElement.requestFullscreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock('landscape').catch(err => {
-                    console.warn("Orientation lock not supported:", err);
-                });
-            }
-        }).catch(err => {
-            console.error("Error entering fullscreen:", err);
-        });
+        mainElement.requestFullscreen();
     } else if (mainElement.mozRequestFullScreen) {
         mainElement.mozRequestFullScreen();
-        lockOrientation('landscape');
     } else if (mainElement.webkitRequestFullscreen) {
         mainElement.webkitRequestFullscreen();
-        lockOrientation('landscape');
     } else if (mainElement.msRequestFullscreen) {
         mainElement.msRequestFullscreen();
-        lockOrientation('landscape');
     }
 
     fullscreen.style.display = "none";
     smallscreen.style.display = "block";
 
-    title.style.animationName = "end_title_anim";
-    title.style.animationDelay = "1s";
+    title.style.animationName="end_title_anim";
+    title.style.animationDelay="1s";
 
-    info.style.display = "none";
+    info.style.display="none";
 
-    sound_image.style.transform = "translateX(-65px)";
-    hint_image.style.transform = "translateX(-65px)";
+    sound_image.style.transform="translateX(-65px)"
+    hint_image.style.transform="translateX(-65px)"
 
-    targets_main.style.display = "block";
+    targets_main.style.display="block";
+
 }
-
-function lockOrientation(orientation) {
-    if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock(orientation).catch(err => {
-            console.warn("Orientation lock not supported:", err);
-        });
-    }
-}
-
 function SmallScreen() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
