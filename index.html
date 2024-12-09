@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/web-icon.png">
+    <title>Gra Mikołajkowa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="main">
+        <div class="images-container">
+            <div id="background"></div>
+            <div id="window"></div>
+            <div id="armchair1"></div>
+            <div id="armchair2"></div>
+            <div id="pot"></div>
+            <div id="fireplace"></div>
+            <div id="mirror"></div>
+            <div id="ball"></div>
+            <div id="tree"></div>
+            <div id="claus"></div>
+        </div>
+        <div id="UI">
+            <div id="title" class="UI-button">
+                <div class="title-container">
+                    <h1>Gra Mikołajkowa</h1>
+                </div>
+            </div>
+            <div id="info">
+                <p>Znajdź wszystkie elementy!</p>
+            </div>
+            <a href="#" onclick="StartGame()" id="play" class="UI-button">
+                <div>Zagraj</div>
+            </a>
+            <button onclick="FullScreen()" id="fullscreen" class="UI-button">
+                <div class="custom-button">
+                    <img src="assets/fullcreen-icon.png">
+                </div>
+            </button>
+            <button onclick="SmallScreen()" id="smallscreen" class="UI-button">
+                <div style="padding: 3px; box-sizing: border-box;" class="custom-button">
+                    <img style="width: 30px; height: 30px; padding-top: 2px;" src="assets/smallcreen-icon.png">
+                </div>
+            </button>
+            <div id="sound-control-main">
+                <div id="sound-control" class="UI-button">
+                    <div class="sound-container">
+                        <div class="range-container">
+                            <input id="volumeControl" type="range" min="0" max="2" step="0.01" value="0.5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sound-image UI-button">
+                <div>
+                    <img src="assets/sound-on.png">
+                </div>
+            </div>
+
+            <div id="hint-main">
+                <div id="hint" class="UI-button">
+                    <div class="hint-container">
+                        <div>
+                            <p>Odkryj pozycje &rarr;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hint-image UI-button">
+                <div>
+                    <a href="#" onclick="ShowPositions()"><img src="assets/hint.png"></a>
+                </div>
+            </div>
+            <!--Targets-->
+            <div class="targets">
+                <a href="#" onclick="BallClicked()" id="ball-target"></a>
+            </div>
+        </div>
+    </section>
+    <audio id="backgroundMusic" src="assets/music.mp3" preload="auto" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
