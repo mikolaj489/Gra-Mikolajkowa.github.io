@@ -45,6 +45,8 @@ function FullScreen() {
         mainElement.webkitRequestFullscreen();
     } else if (mainElement.msRequestFullscreen) {
         mainElement.msRequestFullscreen();
+    }else {
+        console.warn("Twoja przeglądarka nie obsługuje trybu pełnoekranowego.");
     }
 
     fullscreen.style.display = "none";
