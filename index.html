@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div class="white-border">
     <section id="main">
         <div class="images-container">
             <div id="background"></div>
@@ -20,30 +20,68 @@
             <div id="ball"></div>
             <div id="tree"></div>
             <div id="claus"></div>
+            <div id="grinch"></div>
+            <div id="elf"></div>
+            <div id="fire"></div>
+            <div id="candle-fire1"></div>
+            <div id="candle-fire2"></div>
+            <div id="candle-fire3"></div>
+            <div id="sliegh"></div>
+            <div id="big-present"></div>
+            <div class="presents">
+                <div id="present1"></div>
+                <div id="present2"></div>
+                <div id="present3" style="z-index: 10;"></div>
+                <div id="present4"></div>
+                <div id="present5"></div>
+                <div id="present6"></div>
+            </div>
         </div>
         <div id="UI">
-            <div id="title" class="UI-button">
+            <div style="z-index: 30;" id="title" class="UI-button">
                 <div class="title-container">
                     <h1>Gra Mikołajkowa</h1>
                 </div>
             </div>
+            <div id="scale-tree" class="UI-button">
+                <div>
+                    <span>Zmień rozmiar choinki</span>
+                    <input type="range" id="tree-range" oninput="ChangeTreeSize()" type="range" min="100" max="130" step="10" value="100">
+                </div>
+            </div>
+            <div id="scale-claus" class="UI-button">
+                <div>
+                    <span>Zmień rozmiar Mikołaja</span>
+                    <input type="range" id="claus-range" oninput="ChangeClausSize()"type="range" min="100" max="130" step="10" value="100">
+                </div>
+            </div>
+            <div id="scale-presents" class="UI-button">
+                <div>
+                    <span>Zmień liczbę prezentów</span>
+                    <input type="range" id="presents-range" oninput="AddPresent()"type="range" min="0" max="6" step="1" value="0">
+                </div>
+            </div>
+            </div>
             <div id="info">
-                <p>Znajdź wszystkie elementy!</p>
+                <p>Znajdź elementy!</p>
+                <div class="info-second">
+                    <img src="assets/hint.png"><span>&larr; Podpowiedź</span>
+                </div>
             </div>
             <a href="#" onclick="StartGame()" id="play" class="UI-button">
                 <div>Zagraj</div>
             </a>
-            <button onclick="FullScreen()" id="fullscreen" class="UI-button">
+            <button style="z-index: 21;" onclick="FullScreen()" id="fullscreen" class="UI-button">
                 <div class="custom-button">
                     <img src="assets/fullcreen-icon.png">
                 </div>
             </button>
-            <button onclick="SmallScreen()" id="smallscreen" class="UI-button">
+            <button  style="z-index: 21;" onclick="SmallScreen()" id="smallscreen" class="UI-button">
                 <div style="padding: 3px; box-sizing: border-box;" class="custom-button">
                     <img style="width: 30px; height: 30px; padding-top: 2px;" src="assets/smallcreen-icon.png">
                 </div>
             </button>
-            <div id="sound-control-main">
+            <div id="sound-control-main" style="z-index: 21;">
                 <div id="sound-control" class="UI-button">
                     <div class="sound-container">
                         <div class="range-container">
@@ -52,13 +90,13 @@
                     </div>
                 </div>
             </div>
-            <div class="sound-image UI-button">
+            <div  class="sound-image UI-button">
                 <div>
                     <img src="assets/sound-on.png">
                 </div>
             </div>
 
-            <div id="hint-main">
+            <div id="hint-main" style="z-index: 21;">
                 <div id="hint" class="UI-button">
                     <div class="hint-container">
                         <div>
@@ -75,9 +113,21 @@
             <!--Targets-->
             <div class="targets">
                 <a href="#" onclick="BallClicked()" id="ball-target"></a>
+                <a href="#" id="tree-target"></a>
+                <a href="#" id="claus-target"></a>
+                <a href="#" id="presents-target"></a>
+                <a href="#" onclick="GrinchClicked()" id="grinch-target"></a>
+                <a href="#" onclick="ElfClicked()" id="elf-target"></a>
+                <a href="#" onclick="FireClicked()" id="fire-target"></a>
+                <a href="#" onclick="CandleFireClicked1()" id="candle-fire-target1"></a>
+                <a href="#" onclick="CandleFireClicked2()" id="candle-fire-target2"></a>
+                <a href="#" onclick="CandleFireClicked3()" id="candle-fire-target3"></a>
+                <a href="#" onclick="WindowClicked()" id="sleigh-target"></a>
+                <a href="#" onclick="BigPresentClicked()" id="big-present-target"></a>
             </div>
         </div>
     </section>
+    </div>
     <audio id="backgroundMusic" src="assets/music.mp3" preload="auto" loop></audio>
     <script src="script.js"></script>
 </body>
