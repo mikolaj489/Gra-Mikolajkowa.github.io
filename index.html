@@ -9,6 +9,18 @@
 <body>
     <div class="white-border">
         <section id="main">
+            <div id="timer"></div>
+            <div id="lose">
+                <span style="font-size: 3rem;color: white; margin-bottom: 20px;">Koniec Czasu!</span>
+                <a href="#" onclick="Reload()" id="play2" class="UI-button">
+                    <div>Zagraj Ponowownie</div>
+                </a>
+            </div>
+            <div id="win">
+                <video autoplay loop controls>
+                    <source src="assets/Win.mp4">
+                </video> 
+            </div>
             <div class="images-container">
                 <div id="background"></div>
                 <div id="window"></div>
@@ -62,10 +74,20 @@
                     </div>
                 </div>
                 <div id="info">
-                    <p>Znajdź elementy!</p>
-                    <div class="info-second">
-                        <img src="assets/hint.png"><span>&larr; Podpowiedź</span>
-                    </div>
+                   <div>
+                        <p>Znajdź elementy!</p>
+                        <div class="info-second">
+                            <div class="menu-info"> 
+                                <img src="assets/hint.png">
+                                <span>&larr; Podpowiedź w menu</span>
+                            </div>
+                            <div style="position: relative;">
+                                <a class="rules"><span class="arrow"></span> <span class="underline expand-button">Zasady gry</span> <span class="arrow"></span></a>
+                                <a class="underline expand-button-2"></a>
+                                <div class="expand-info">Znajdź 12 ukrytych elementów na obrazku! Każdy z nich skrywa swoją własną, unikalną interakcję. Powodzenia! 😊</div>
+                            </div>
+                        </div>
+                   </div>
                 </div>
                 <a href="#" onclick="StartGame()" id="play" class="UI-button">
                     <div>Zagraj</div>
@@ -84,7 +106,7 @@
                     <div id="sound-control" class="UI-button">
                         <div class="sound-container">
                             <div class="range-container">
-                                <input id="volumeControl" type="range" min="0" max="1"step="0.01" value="0.5">
+                                <input id="volumeControl" type="range" min="0" max="1"step="0.01" value="0.5" oninput="Volume()">
                             </div>
                         </div>
                     </div>
@@ -98,7 +120,7 @@
                     <div id="hint" class="UI-button">
                         <div class="hint-container">
                             <div>
-                                <p>Odkryj pozycje &rarr;</p>
+                                <p>Kliknij &rarr;<span>aby odkryć pozycje</span></p>
                             </div>
                         </div>
                     </div>
