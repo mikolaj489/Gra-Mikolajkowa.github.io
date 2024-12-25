@@ -41,6 +41,7 @@ const expandButton = document.querySelector('.expand-button');
 const expandButtonSecond = document.querySelector('.expand-button-2');
 const arrow = document.querySelectorAll('.arrow');
 const win = document.getElementById('win');
+const langButton = document.querySelectorAll('#language-switcher button');
 var timer = 120;
 var timerInterval;
 
@@ -426,3 +427,78 @@ function SumPoints(){
         },500)
     }
 }
+
+//translation
+const translations = {
+    pl: {
+        "h1": "Gra Mikołajkowa",
+        ".info1": "Znajdź elementy!",
+        ".expand-button": "Zasady gry",
+        ".info2": "Podpowiedź w menu",
+        ".expand-info": "Znajdź 12 ukrytych elementów na obrazku! Każdy z nich skrywa swoją własną, unikalną interakcję. Powodzenia! 😊",
+        ".play1": "Zagraj",
+        ".footer1": "Strona stworzona i zaprojektowana przez Mikołaja Leszczyńskiego",
+        ".footer2": "Szkoła: ",
+        ".hint-expanded2": "Kliknij",
+        ".hint-expanded3": "aby odkryć pozycje",
+        ".end1": "Koniec Czasu!",
+        ".end2": "Zagraj Ponownie",
+      
+      },
+    en: {
+        "h1": "Santa Claus Game",
+        ".info1": "Find the elements!",
+        ".expand-button": "Rules",
+        ".info2": "Hint in menu",
+        ".expand-info": "Find the 12 hidden elements in the picture! Each of them hides its own unique interaction. Good luck! 😊",
+        ".play1": "Play",
+        ".footer1": "Website created and designed by Mikołaj Leszczyński",
+        ".footer2": "School: ",
+        ".hint-expanded2": "Klick",
+        ".hint-expanded3": "to show positions",
+        ".end1": "Time is up!",
+        ".end2": "Play again",
+
+      },
+    de: {
+        "h1": "Weihnachtsmann-Spiel",
+        ".info1": "Finde Elemente!",
+        ".expand-button": "Spielregeln",
+        ".info2": "Menü-Hinweis",
+        ".expand-info": "Finde die 12 versteckten Elemente auf dem Bild! Jedes versteckt seine eigene einzigartige Interaktion. Viel Glück! 😊",
+        ".play1": "Spielen",
+        ".footer1": "Website erstellt und gestaltet von Mikołaj Leszczyński",
+        ".footer2": "Schule: ",
+        ".hint-expanded2": "Klicke",
+        ".hint-expanded3": "und finde elemente",
+        ".end1": "Die Zeit ist um!",
+        ".end2": "Spiele noch einmal",
+      } 
+  };
+
+function translatePage(language) {
+    const langData = translations[language];
+    if (!langData) return;
+  
+    Object.keys(langData).forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(element => {
+        element.textContent = langData[selector];
+      });
+    });
+  }
+
+    for (let i = 0; i < langButton.length; i++) { 
+        langButton[i].addEventListener('click', () => {
+            langButton[i].style.backgroundColor = 'whitesmoke';
+            langButton[i].style.color = '#991414';
+        });
+    
+        document.addEventListener("click", (event) => {
+            if (!langButton[i].contains(event.target)) {
+                langButton[i].style.backgroundColor = '#991414';
+                langButton[i].style.color = 'whitesmoke';
+            }
+        });
+    }
+    
