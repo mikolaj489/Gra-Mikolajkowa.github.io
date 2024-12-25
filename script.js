@@ -427,8 +427,6 @@ function SumPoints(){
         },500)
     }
 }
-
-//translation
 const translations = {
     pl: {
         "h1": "Gra Mikołajkowa",
@@ -443,8 +441,7 @@ const translations = {
         ".hint-expanded3": "aby odkryć pozycje",
         ".end1": "Koniec Czasu!",
         ".end2": "Zagraj Ponownie",
-      
-      },
+    },
     en: {
         "h1": "Santa Claus Game",
         ".info1": "Find the elements!",
@@ -454,12 +451,11 @@ const translations = {
         ".play1": "Play",
         ".footer1": "Website created and designed by Mikołaj Leszczyński",
         ".footer2": "School: ",
-        ".hint-expanded2": "Klick",
+        ".hint-expanded2": "Click",
         ".hint-expanded3": "to show positions",
         ".end1": "Time is up!",
         ".end2": "Play again",
-
-      },
+    },
     de: {
         "h1": "Weihnachtsmann-Spiel",
         ".info1": "Finde Elemente!",
@@ -473,32 +469,45 @@ const translations = {
         ".hint-expanded3": "und finde elemente",
         ".end1": "Die Zeit ist um!",
         ".end2": "Spiele noch einmal",
-      } 
-  };
+    }
+};
+
+
+
+function updateLanguageButtonStyles(language) {
+    const languages = ['pl', 'en', 'de'];
+    langButton.forEach((button, index) => {
+        if (index === languages.indexOf(language)) {
+            button.style.backgroundColor = 'whitesmoke';
+            button.style.color = '#991414';
+        } else {
+            button.style.backgroundColor = '#991414';
+            button.style.color = 'whitesmoke';
+        }
+    });
+}
 
 function translatePage(language) {
     const langData = translations[language];
     if (!langData) return;
-  
-    Object.keys(langData).forEach(selector => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach(element => {
-        element.textContent = langData[selector];
-      });
-    });
-  }
 
-    for (let i = 0; i < langButton.length; i++) { 
-        langButton[i].addEventListener('click', () => {
-            langButton[i].style.backgroundColor = 'whitesmoke';
-            langButton[i].style.color = '#991414';
+    Object.keys(langData).forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.textContent = langData[selector];
         });
-    
-        document.addEventListener("click", (event) => {
-            if (!langButton[i].contains(event.target)) {
-                langButton[i].style.backgroundColor = '#991414';
-                langButton[i].style.color = 'whitesmoke';
-            }
-        });
-    }
-    
+    });
+
+    updateLanguageButtonStyles(language);
+}
+
+window.onload = () => {
+    translatePage('pl'); 
+};
+
+document.querySelectorAll('.lang-button').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const languages = ['pl', 'en', 'de'];
+        translatePage(languages[index]);
+    });
+});
