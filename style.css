@@ -11,6 +11,24 @@ body{
     border: 10px dotted #0a6847;
     box-sizing: border-box;
 }
+#language-switcher{
+    position: fixed;
+    top:5%;
+    right:5%;
+}
+#language-switcher button{
+    width:50px;
+    height: 40px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: Tahoma, sans-serif;
+    border-radius: 10px;
+    background-color:#991414;
+    border: 3px solid #0a6847;
+    color: whitesmoke;
+    cursor: pointer;
+}
 #timer{
     color: white;
     font-size: 2rem;
@@ -121,7 +139,7 @@ h1{
 }
 .title-container{
     background-color: #af1717;
-    padding: 20px;
+    padding: 20px 10px;
 }
 #info{
     position: absolute;
@@ -213,7 +231,7 @@ h1{
     position: relative;
     border-radius: 10px;
 }
-.hint-container span{
+.hint-container .hint-expanded3{
     display: block;
     font-size: 0.8rem;
 }
@@ -224,7 +242,13 @@ h1{
 .range-container input{
     margin-top: 14px;
 }
-.hint-container p{
+.hint-container .hint-expanded{
+    text-align: center;
+    margin: 0 0 0 20px;
+    text-transform: uppercase;
+    color: white;
+}
+.hint-container .hint-expanded2{
     text-align: center;
     margin: 0 0 0 20px;
     text-transform: uppercase;
