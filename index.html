@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="language-switcher">
+        <button onclick="translatePage('pl')">PL</button>
+        <button onclick="translatePage('en')">EN</button>
+        <button onclick="translatePage('de')">DE</button>
+      </div>      
     <div class="white-border">
         <section id="main">
             <div id="timer"></div>
             <div id="lose">
-                <span style="font-size: 3rem;color: white; margin-bottom: 20px;">Koniec Czasu!</span>
+                <span style="font-size: 3rem;color: white; margin-bottom: 20px;" class="end1">Koniec Czasu!</span>
                 <a href="#" onclick="Reload()" id="play2" class="UI-button">
-                    <div>Zagraj Ponowownie</div>
+                    <div class="end2">Zagraj Ponowownie</div>
                 </a>
             </div>
             <div id="win">
@@ -75,11 +80,11 @@
                 </div>
                 <div id="info">
                    <div>
-                        <p>Znajdź elementy!</p>
+                        <p class="info1">Znajdź elementy!</p>
                         <div class="info-second">
                             <div class="menu-info"> 
                                 <img src="assets/hint.png">
-                                <span>&larr; Podpowiedź w menu</span>
+                                <span>&larr;</span><span class="info2">Podpowiedź w menu</span>
                             </div>
                             <div style="position: relative;">
                                 <a class="rules"><span class="arrow"></span> <span class="underline expand-button">Zasady gry</span> <span class="arrow"></span></a>
@@ -90,7 +95,7 @@
                    </div>
                 </div>
                 <a href="#" onclick="StartGame()" id="play" class="UI-button">
-                    <div>Zagraj</div>
+                    <div class="play1">Zagraj</div>
                 </a>
                 <button style="z-index: 21;" onclick="FullScreen()" id="fullscreen"class="UI-button">
                     <div class="custom-button">
@@ -120,7 +125,7 @@
                     <div id="hint" class="UI-button">
                         <div class="hint-container">
                             <div>
-                                <p>Kliknij &rarr;<span>aby odkryć pozycje</span></p>
+                                <p class="hint-expanded"><span class="hint-expanded2">Kliknij</span><span>&rarr;</span><span class="hint-expanded3">aby odkryć pozycje</span></p>
                             </div>
                         </div>
                     </div>
@@ -149,12 +154,12 @@
         </section>
         <footer>
             <div>
-                <p>Strona stworzona i zaprojektowana przez Mikołaja Leszczyńskiego</p>
+                <p class="footer1">Strona stworzona i zaprojektowana przez Mikołaja Leszczyńskiego</p>
                 <p style="color:white; font-size: 0.6rem;">Grinch by Tomasz Jarzyński</p>
             </div>
             <div class="footer-info">
                 <a href="https://github.com/mikolaj489" target="_blank"><span>GitHub: </span><img src="assets/GitHub-icon.png"></a>
-                <a href="https://www.elektronik.edu.pl/" target="_blank"><span>Szkoła: </span><img src="assets/ZSE-icon.png"></a>
+                <a href="https://www.elektronik.edu.pl/" target="_blank"><span class="footer2">Szkoła: </span><img src="assets/ZSE-icon.png"></a>
             </div>
         </footer>
     </div>
