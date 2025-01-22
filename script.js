@@ -42,6 +42,9 @@ const expandButtonSecond = document.querySelector('.expand-button-2');
 const arrow = document.querySelectorAll('.arrow');
 const win = document.getElementById('win');
 const langButton = document.querySelectorAll('#language-switcher button');
+const treeSize = document.getElementById('tree-size');
+const clausSize = document.getElementById('claus-size');
+const presentsCount = document.getElementById('presents-count');
 var timer = 120;
 var timerInterval;
 
@@ -441,6 +444,9 @@ const translations = {
         ".hint-expanded3": "aby odkryć pozycje",
         ".end1": "Koniec Czasu!",
         ".end2": "Zagraj Ponownie",
+        "#tree-size": "Zmień rozmiar choinki",
+        "#claus-size": "Zmień rozmiar Mikołaja",
+        "#presents-count": "Zmień ilość prezentów",
     },
     en: {
         "h1": "Santa Claus Game",
@@ -455,6 +461,9 @@ const translations = {
         ".hint-expanded3": "to show positions",
         ".end1": "Time is up!",
         ".end2": "Play again",
+        "#tree-size": "Change tree size",
+        "#claus-size": "Change Claus size",
+        "#presents-count": "Change number of presents",
     },
     de: {
         "h1": "Weihnachtsmann-Spiel",
@@ -469,6 +478,9 @@ const translations = {
         ".hint-expanded3": "und finde elemente",
         ".end1": "Die Zeit ist um!",
         ".end2": "Spiele noch einmal",
+        "#tree-size": "die Größe des Weihnachtsbaums ändern",
+        "#claus-size": "Größe des Weihnachtsmannes ändern",
+        "#presents-count": "die Anzahl der Geschenke ändern",
     }
 };
 
