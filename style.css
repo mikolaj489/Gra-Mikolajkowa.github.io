@@ -10,6 +10,7 @@ body{
     background-color: #991414;
     border: 10px dotted #0a6847;
     box-sizing: border-box;
+    overflow: hidden;
 }
 #language-switcher{
     position: fixed;
